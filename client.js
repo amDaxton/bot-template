@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const { prefix, line } = require('./config.json');
-var version = '1.1'
 const logSymbols = require('log-symbols');
 
 // Command Setting
@@ -23,7 +22,7 @@ for (const file of commandFiles) {
 // Ready Event
 client.once('ready', async () => {
   console.log(`${client.user.tag} has logged in!`)
-  client.user.setPresence({ activity: { name: `${prefix}help | v${version}`, type: 'WATCHING' }, status: 'dnd' })
+  client.user.setPresence({ activity: { name: `${prefix}help`, type: 'WATCHING' }, status: 'dnd' })
 });
 
 // Message Event
