@@ -2,7 +2,9 @@
 
 Change the name of copy.env to .env and put your bots token.
 
-In the config.json put the prefix of your bot!
+In the `config.json` put the prefix of your bot!
+
+In `config.json` replace `put hex color code` with a hex color code. With the color you want for the help embed!
 
 Then open cmd.bat and type  `npm i`
 
