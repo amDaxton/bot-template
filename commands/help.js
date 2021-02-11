@@ -108,12 +108,33 @@ module.exports = {
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
       return message.channel.send(em)
-    } else {
+    } else if(args[0] === 'github') {
+      em.setTitle('Github Command')
+      em.addFields({
+        name: '**Name:**',
+        value: 'git'
+      }, {
+        name: '**Description:**',
+        value: 'Gives you the source code for this bot!'
+      }, {
+        name: '**Aliases:**',
+          value: 'git , src , srcCode'
+      }, {
+        name: '**Usage:**',
+          value: ` ${prefix}github \n ${prefix}git \n ${prefix}src \n ${prefix}srcCode`
+      })
+      em.setColor(col)
+      em.setTimestamp()
+      em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
+
+      return message.channel.send(em)
+    }
+     else {
       em.setTitle(':mailbox_with_mail: Need help?')
       em.setDescription(`**My prefix is \`${prefix}\`**`)
       em.setColor(col)
       em.setThumbnail(client.user.displayAvatarURL())
-      em.addField(`All My Commands:`, `**:tools: • Utilities** \n \`${prefix}ping\` ,  \`${prefix}poll\`, \`${prefix}help\` , \`${prefix}math\` \n \n **:video_game: • Fun** \n \`${prefix}meme\` \n \n **:eyeglasses: • Moderation** \n \`${prefix}purge\``)
+      em.addField(`All My Commands:`, `**:tools: • Utilities** \n \`${prefix}ping\` ,  \`${prefix}poll\`, \`${prefix}help\` , \`${prefix}math\`, \`${prefix}github\` \n \n **:video_game: • Fun** \n \`${prefix}meme\` \n \n **:eyeglasses: • Moderation** \n \`${prefix}purge\``)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}. Say \`${prefix}help <command>\` for help on a command!`, message.author.displayAvatarURL());
 
