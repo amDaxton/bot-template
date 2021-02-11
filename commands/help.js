@@ -1,4 +1,6 @@
-const { prefix } = require('../config.json')
+const config = require('../config.json')
+const prefix = config.prefix
+const col = config.embedColor
 
 module.exports = {
   name: 'help',
@@ -21,7 +23,7 @@ module.exports = {
         name: '**Usage:**',
         value: ` ${prefix}ping \n ${prefix}delay`
       })
-      em.setColor('GREEN')
+      em.setColor(col)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
@@ -41,7 +43,7 @@ module.exports = {
         name: '**Usage:**',
         value: ` ${prefix}math <num1> <operation> <num2> \n ${prefix}solve <num1> <operation> <num2>`
       })
-      em.setColor('GREEN')
+      em.setColor(col)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
@@ -61,7 +63,7 @@ module.exports = {
         name: '**Usage:**',
         value: ` ${prefix}purge <amount> \n ${prefix}clear <amount> \n ${prefix}delete <amount>`
       })
-      em.setColor('GREEN')
+      em.setColor(col)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
@@ -81,7 +83,7 @@ module.exports = {
         name: '**Usage:**',
         value: ` ${prefix}poll #channel <content> \n ${prefix}vote #channel <content>`
       })
-      em.setColor('GREEN')
+      em.setColor(col)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
@@ -101,17 +103,19 @@ module.exports = {
         name: '**Usage:**',
         value: ` ${prefix}meme \n ${prefix}mem`
       })
-      em.setColor('GREEN')
+      em.setColor(col)
       em.setTimestamp()
       em.setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
 
       return message.channel.send(em)
     } else {
-      em.setTitle('Help On My Commands!')
-      em.setColor('GREEN')
-      em.setDescription(`My Prefix is  ${prefix} all my commands are: \n \`${prefix}ping\` , \`${prefix}help\` , \`${prefix}math\` , \`${prefix}purge\`, \`${prefix}poll\` , \`${prefix}meme\``)
+      em.setTitle(':mailbox_with_mail: Need help?')
+      em.setDescription(`**My prefix is \`${prefix}\`**`)
+      em.setColor(col)
+      em.setThumbnail(client.user.displayAvatarURL())
+      em.addField(`All My Commands:`, `**:tools: • Utilities** \n \`${prefix}ping\` ,  \`${prefix}poll\`, \`${prefix}help\` , \`${prefix}math\` \n \n **:video_game: • Fun** \n \`${prefix}meme\` \n \n **:eyeglasses: • Moderation** \n \`${prefix}purge\``)
       em.setTimestamp()
-      em.setFooter(`Requested by ${message.author.tag}. Say \`${prefix}help <command>\` for help on a command! || Handler Made by GhostDev#2029`, message.author.displayAvatarURL());
+      em.setFooter(`Requested by ${message.author.tag}. Say \`${prefix}help <command>\` for help on a command!`, message.author.displayAvatarURL());
 
       return message.channel.send(em)
     }
