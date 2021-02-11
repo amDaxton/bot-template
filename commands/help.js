@@ -111,7 +111,7 @@ module.exports = {
       em.setColor('GREEN')
       em.setDescription(`My Prefix is  ${prefix} all my commands are: \n \`${prefix}ping\` , \`${prefix}help\` , \`${prefix}math\` , \`${prefix}purge\`, \`${prefix}poll\` , \`${prefix}meme\``)
       em.setTimestamp()
-      em.setFooter(`Requested by ${message.author.tag}. Say \`${prefix}help <command>\` for help on a command!`, message.author.displayAvatarURL());
+      em.setFooter(`Requested by ${message.author.tag}. Say \`${prefix}help <command>\` for help on a command! || Handler Made by GhostDev#2029`, message.author.displayAvatarURL());
 
       return message.channel.send(em)
     }
