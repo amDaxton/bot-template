@@ -1,5 +1,5 @@
 {
-  "prefix": "put your bots prefix",
+  "prefix": "!",
   "line": "│┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅│",
-  "embedColor": "put a hex color code here"
+  "embedColor": "FF0000"
 }
